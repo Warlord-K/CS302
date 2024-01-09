@@ -1,2 +1,2 @@
-# CS302
-Trying to get OpenGL working on Codespaces to save me from bringing my old laptop to lab
+# CS358
+Lab code so that I don't have to manage it later
