@@ -9,6 +9,6 @@ save:
 run:
 	@g++ $$LAB/$$q.cpp -o $$LAB/$$q; \
 	./$$LAB/$$q
-	@export message="$$LAB: $$q"; \
-	@echo "Saving..."; \
+	@export message="$$LAB: $$q" ; \
+	echo "Saving..."; \
 	make save
