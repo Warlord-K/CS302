@@ -3,8 +3,8 @@ export LAB
 
 save:
 	@git add .; \
-	git commit -m "$$message"; \
-	git push
+	git commit --quiet -m "$$message"; \
+	git push --quiet
 
 run:
 	@g++ $$LAB/$$q.cpp -o $$LAB/$$q; \
