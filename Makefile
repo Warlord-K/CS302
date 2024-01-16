@@ -10,5 +10,5 @@ run:
 	@g++ $$LAB/$$q.cpp -o $$LAB/$$q; \
 	./$$LAB/$$q
 	@export message="$$LAB: $$q" ; \
-	echo "Saving..."; \
+	echo "\n\nSaving...\n\n"; \
 	make save
