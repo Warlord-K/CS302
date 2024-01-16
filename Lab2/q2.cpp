@@ -20,8 +20,8 @@ int main(){
     string s;
     cout << "Enter String (aA-zZ): \n";
     cin >> s;
-    if(isKeyword(s))    cout << "Not a valid Identifier\n";
-    else if(isIdentifier(s))    cout << "Valid Identifier\n";
-    else    cout << "Not a valid Identifier\n";
+    if(isKeyword(s))    cout << "Keyword\n";
+    else if(isIdentifier(s))    cout << "Identifier\n";
+    else    cout << "Not a Keyword or Identifier\n";
     return  0;
 }
