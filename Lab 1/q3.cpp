@@ -3,16 +3,20 @@
 using namespace std;
 
 int main(){
+    cout << "Enter String (aA-zZ): \n";
     string s = "";
-    cout << "Enter Line: \n";
-    string x;
-    while(cin){
-        cin >> x;
-        s += x;
+    getline(cin, s);
+    while(s[0] == ' '){
+        s.erase(0, 1);
     }
-    // s = ltrim(s);
-    cout << s << endl;
-    if (s.substr(0,2) == "//" || s.substr(0,2) == "/*") cout << "This line is a comment in C!" << endl;
-    else cout << "This line is not a comment in C." << endl;
+    while(s[s.length() - 1] == ' '){
+        s.erase(s.length() - 1, 1);
+    }
+    if(s[0] == '/' && s[1] == '/' || s[0] == '/' && s[1] == '*' && s[s.length() - 2] == '*' && s[s.length() - 1] == '/'){
+        cout << "Comment\n";
+    }
+    else{
+        cout << "Not a comment\n";
+    }
     return 0;
 }
