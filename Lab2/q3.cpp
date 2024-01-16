@@ -12,6 +12,8 @@ int main(){
     fin.open(filename);
     string s;
     int lines = 0, spaces = 0, characters = 0;
+    getline(fin,s);
+    cout << s;
     while(getline(fin,s)){
         cout << s;
         lines++;
