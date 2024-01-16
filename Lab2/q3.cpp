@@ -16,7 +16,7 @@ int main(){
         lines++;
         for(int i=0;i<s.length();i++){
             if(s[i] == ' ') spaces++;
-            characters++;
+            else characters++;
         }
     }
     cout << "Lines: " << lines << "\nSpaces: " << spaces << "\nCharacters: " << characters << "\n";
