@@ -1,5 +1,3 @@
-// Count the number of spaces, lines and characters in a file
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -15,6 +13,7 @@ int main(){
     string s;
     int lines = 0, spaces = 0, characters = 0;
     while(getline(fin,s)){
+        cout << s;
         lines++;
         for(int i=0;i<s.length();i++){
             if(s[i] == ' ') spaces++;
