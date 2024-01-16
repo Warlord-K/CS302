@@ -10,6 +10,7 @@ int main(){
     ifstream fin;
     cout << "Enter file name:" << endl;
     string filename;
+    cin >> filename;
     fin.open(filename);
     string s;
     int lines = 0, spaces = 0, characters = 0;
