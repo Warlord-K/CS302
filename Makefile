@@ -1,5 +1,13 @@
+LAB=Lab2
+export LAB
+
 save:
-	@read -p "Commit Message: " message; \
-	git add .; \
+	@git add .; \
 	git commit -m "$$message"; \
 	git push
+
+run:
+	@g++ $$LAB/$$q.cpp -o $$LAB/$$q; \
+	./$$LAB/$$q
+	@export message="$$LAB: $$q"; \
+	make save
