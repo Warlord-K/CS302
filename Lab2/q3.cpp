@@ -8,7 +8,9 @@ using namespace std;
 
 int main(){
     ifstream fin;
-    fin.open("input.txt");
+    cout << "Enter file name:" << endl;
+    string filename;
+    fin.open(filename);
     string s;
     int lines = 0, spaces = 0, characters = 0;
     while(getline(fin,s)){
