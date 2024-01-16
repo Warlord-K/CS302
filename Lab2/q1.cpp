@@ -18,7 +18,7 @@ bool isIdentifier(string s){
 
 int main(){
     string s;
-    cout << "Enter String (aA-zZ): \n";
+    cout << "Enter String: \n";
     cin >> s;
     if(isKeyword(s))    cout << "Not a valid Identifier\n";
     else if(isIdentifier(s))    cout << "Valid Identifier\n";
