@@ -17,6 +17,12 @@ bool isIdentifier(string s){
     return true;
 }
 
+bool isOperator(string s){
+    unordered_set<string> operators = {"+","-","*","/","%","=","==","!=","<",">","<=",">=","&&","||","!","&","|","^","~","<<",">>","++","--","+=","-=","*=","/=","%=","&=","|=","^=","<<=",">>=","->",".","::"};
+    if(operators.find(s) != operators.end())  return true;
+    return false;
+}
+
 int main(){
     // Read a file and classify each word as keyword or identifier or operator
     ifstream fin;
@@ -28,7 +34,8 @@ int main(){
     while(fin >> s){
         if(isKeyword(s))    cout << s << " is a keyword\n";
         else if(isIdentifier(s))    cout << s << " is an identifier\n";
-        else    cout << s << " is an operator\n";
+        else if(isOperator(s))    cout << s << " is an operator\n";
+        else    cout << s << " is not a keyword or identifier or operator\n";
     }
     return  0;
 }
