@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <fstream>
 
 using namespace std;
 
@@ -17,11 +18,17 @@ bool isIdentifier(string s){
 }
 
 int main(){
+    // Read a file and classify each word as keyword or identifier or operator
+    ifstream fin;
+    cout << "Enter file name:" << endl;
+    string filename;
+    cin >> filename;
+    fin.open(filename);
     string s;
-    cout << "Enter String (aA-zZ): \n";
-    cin >> s;
-    if(isKeyword(s))    cout << "Keyword\n";
-    else if(isIdentifier(s))    cout << "Identifier\n";
-    else    cout << "Not a Keyword or Identifier\n";
+    while(fin >> s){
+        if(isKeyword(s))    cout << s << " is a keyword\n";
+        else if(isIdentifier(s))    cout << s << " is an identifier\n";
+        else    cout << s << " is an operator\n";
+    }
     return  0;
 }
