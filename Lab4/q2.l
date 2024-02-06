@@ -6,7 +6,7 @@
 /* Rule Section */
 %%
 
-printf(.*) num_printfs++;
+printf\(.*\) num_printfs++;
 scanf(.*) num_scanfs++;
 . ;
 [\n] ;

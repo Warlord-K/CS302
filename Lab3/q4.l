@@ -5,8 +5,8 @@
 /* Rule Section */
 %%
 
-\\\\.*[\n] num_comments++;
-\\\*[^\*\\]*\*\\ num_comments++;
+\/\/.*[\n] num_comments++;
+\/\*[^\*\/]*\*\/ num_comments++;
 . ;
 [\n] ;
 %%
