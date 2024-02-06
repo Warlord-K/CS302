@@ -1,15 +1,15 @@
 Not a comment
 
-\\ comment
+// comment
 
-\\ single comment but multiple \\
+// single comment but multiple //
 
-inline \\ comment
+inline // comment
 
-\* This
+/* This
 is
 
 a multiline
-comment *\
+comment */
 
-\* Multiline comment in single line *\
+/* Multiline comment in single line */
