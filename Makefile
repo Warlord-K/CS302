@@ -1,10 +1,10 @@
-LAB=Lab3
+LAB=Lab4
 export LAB
 
 save:
 	@git add .; \
 	git commit --quiet -m "$$message"; \
-	git push --quiet
+	git push --quiet --force
 
 runs:
 	@g++ $$LAB/$$q.cpp -o $$LAB/$$q; \

@@ -1,15 +1,7 @@
-Not a comment
+printf("Hello");
 
-\\ comment
+printf(variable);
 
-\\ single comment but multiple \\
+not a printf(
 
-inline \\ comment
-
-\* This
-is
-
-a multiline
-comment *\
-
-\* Multiline comment in single line *\
+)
