@@ -1,4 +1,4 @@
-LAB=Lab2
+LAB=Lab3
 export LAB
 
 save:
@@ -15,3 +15,16 @@ runs:
 run:
 	@g++ $$LAB/$$q.cpp -o $$LAB/$$q; \
 	./$$LAB/$$q
+
+lx:
+	@read -p "Question Number: " q; \
+	lex $$LAB/q$$q.l; \
+	yacc -d $$LAB/q$$q.y; \
+	cc lex.yy.c -o $$LAB/q$$q y.tab.c -ll; \
+	./$$LAB/q$$q < input.txt > output.txt
+
+lex:
+	@read -p "Question Number: " q; \
+	lex $$LAB/q$$q.l; \
+	cc lex.yy.c -o $$LAB/q$$q -ll; \
+	./$$LAB/q$$q < input.txt

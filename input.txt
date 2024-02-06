@@ -1,0 +1,15 @@
+Not a comment
+
+\\ comment
+
+\\ single comment but multiple \\
+
+inline \\ comment
+
+\* This
+is
+
+a multiline
+comment *\
+
+\* Multiline comment in single line *\
