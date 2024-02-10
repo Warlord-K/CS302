@@ -1,4 +1,1 @@
-printf("Hello");
-scanf(variable);
-print("This printf shouldn't be counted");
-scan('Total 2 printfs and 2 scanfs');
+-2.3+5-2+4.33-1.
