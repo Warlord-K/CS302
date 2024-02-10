@@ -5,9 +5,10 @@
 
 /* Rule Section */
 %%
-
-printf\(.*\) num_printfs++;
-scanf(.*) num_scanfs++;
+\".*\" ;
+\'[.]*\' ;
+printf num_printfs++;
+scanf num_scanfs++;
 . ;
 [\n] ;
 %%

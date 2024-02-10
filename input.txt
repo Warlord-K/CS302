@@ -1,15 +1,4 @@
-Not a comment
-
-// comment
-
-// single comment but multiple //
-
-inline // comment
-
-/* This
-is
-
-a multiline
-comment */
-
-/* Multiline comment in single line */
+printf("Hello");
+scanf(variable);
+print("This printf shouldn't be counted");
+scan('Total 2 printfs and 2 scanfs');
