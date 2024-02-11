@@ -2,7 +2,8 @@ LAB=Lab4
 export LAB
 
 save:
-	@git add .; \
+	@read -p "Commit Message: " message; \
+	git add .; \
 	git commit --quiet -m "$$message"; \
 	git push --quiet --force
 
