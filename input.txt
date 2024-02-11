@@ -1,4 +1,4 @@
-This is the rolling caeser cipher
-just for testing aaaaaaaaaaaaaaaaaaaaaaaaaABCDEFGHIJKLMNOPQRSTabcsefghijklmnopqrstuv bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb 
-ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-more testing zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+printf("Hello");
+scanf(variable);
+print("This printf shouldn't be counted");
+scan('Total 2 printfs and 2 scanfs');

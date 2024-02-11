@@ -1,3 +1,8 @@
 This is the rolling caeser cipher
-just for testing aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-more testing zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+just for testing 
+aaaaaaaaaaaaaaaaaaaaaaaaa
+ABCDEFGHIJKLMNOPQRST
+abcsefghijklmnopqrstuv 
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb 
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+zzzzzzzzzzzhgukjrebkequidwbjbHUBWDBIWzzzzzzzz
