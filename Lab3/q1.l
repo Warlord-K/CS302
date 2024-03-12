@@ -1,26 +1,20 @@
 %{
-   /* Definition section */
-  #include<stdio.h>
-  #include "y.tab.h"
-  extern int yylval;
+
+#include "y.tab.h"
+
+
 %}
-  
-/* Rule Section */
+
 %%
-[0-9]+ {
-          yylval=atoi(yytext);
-          return NUMBER;
-  
-       }
-[\t] ;
-  
-[\n] return 0;
-  
-. return yytext[0];
-  
+
+("hi"|"oi")"\n"       { return HI;  }
+("tchau"|"bye")"\n"   { return BYE; }
+.                     { yyerror("Unknown char");  }
+
 %%
-  
-int yywrap()
+
+
+int yywrap(void)
 {
- return 1;
+   return 0;
 }

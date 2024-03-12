@@ -1,20 +1,17 @@
 %{
-
-#include "y.tab.h"
-
-
+   int num_words = 0;
 %}
 
+/* Rule Section */
 %%
 
-("hi"|"oi")"\n"       { return HI;  }
-("tchau"|"bye")"\n"   { return BYE; }
-.                     { yyerror("Unknown char");  }
-
+[a-zA-Z0-9]+ num_words++;
+. ;
+[\n] ;
 %%
 
-
-int yywrap(void)
+int yywrap()
 {
-   return 0;
+   printf("Number of Words: %d\n", num_words);
+ return 1;
 }

@@ -1,4 +1,4 @@
-LAB=Lab4
+LAB=Lab5
 export LAB
 
 save:
@@ -21,8 +21,8 @@ lx:
 	@read -p "Question Number: " q; \
 	lex $$LAB/q$$q.l; \
 	yacc -d $$LAB/q$$q.y; \
-	cc lex.yy.c -o $$LAB/q$$q y.tab.c -ll; \
-	./$$LAB/q$$q < input.txt > output.txt
+	cc lex.yy.c y.tab.c -ll -o $$LAB/q$$q; \
+	./$$LAB/q$$q
 
 lex:
 	@read -p "Question Number: " q; \

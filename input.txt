@@ -1,4 +1,4 @@
-printf("Hello");
-scanf(variable);
-print("This printf shouldn't be counted");
-scan('Total 2 printfs and 2 scanfs');
+AAAAAAAAAABBB
+AAAB
+ANB
+MAXBBAA

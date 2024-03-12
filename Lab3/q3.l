@@ -1,17 +1,18 @@
 %{
-   int num_words = 0;
+   int num_comments = 0;
 %}
 
 /* Rule Section */
 %%
 
-[a-zA-Z0-9]+ num_words++;
+\/\/.*[\n] num_comments++;
+\/\*([^*]|\*+[^*/])*\*+\/ num_comments++;
 . ;
 [\n] ;
 %%
 
 int yywrap()
 {
-   printf("Number of Words: %d\n", num_words);
+   printf("Number of Comments: %d\n", num_comments);
  return 1;
 }
