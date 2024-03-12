@@ -6,15 +6,14 @@
    int operators = 0;
    int flag = 0;
 %} 
+
 %start StartSymbol
 %token NUMBER
 
 %%
 StartSymbol: S{
-  
          printf("\nTotal Operands=%d, Operators=%d\n", operands, operators);
          return 0;
-  
         };
  S     :  S'+'S {operators++;}
        |  S'-'S {operators++;}
@@ -23,16 +22,11 @@ StartSymbol: S{
        |  NUMBER {operands++;}
        ;
 %% 
- 
-
-//driver code
 void main()
 {
    printf("\nEnter Any Arithmetic Expression which can have operations Addition, Subtraction, Multiplication, Division:\n");
-  
    yyparse();
-   if(flag==0)
-   printf("\nEntered arithmetic expression is Valid\n\n");
+   if(flag==0)   printf("\nEntered arithmetic expression is Valid\n\n");
    return 0;
 }
   

@@ -66,16 +66,13 @@
 
 
 /* First part of user prologue.  */
-#line 1 "Lab5/q2.y"
+#line 1 "Lab5/q1.y"
  
    #include <ctype.h> 
    #include <stdio.h> 
    #define YYSTYPE double /* double type for yacc stack */ 
-   int operands = 0;
-   int operators = 0;
-   int flag = 0;
 
-#line 79 "y.tab.c"
+#line 76 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -118,16 +115,6 @@
 extern int yydebug;
 #endif
 
-/* Token type.  */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-  enum yytokentype
-  {
-    NUMBER = 258
-  };
-#endif
-/* Tokens.  */
-#define NUMBER 258
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -445,21 +432,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  4
+#define YYFINAL  10
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   9
+#define YYLAST   15
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  8
+#define YYNTOKENS  6
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  3
+#define YYNNTS  4
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  7
+#define YYNRULES  9
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  13
+#define YYNSTATES  14
 
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   258
+#define YYMAXUTOK   257
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -472,16 +459,12 @@ union yyalloc
 static const yytype_int8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     6,     4,     2,     5,     2,     7,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       3,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     4,     5,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -496,14 +479,18 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     1,     2,     3
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     1,     2
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    13,    13,    19,    20,    21,    22,    23
+       0,     8,     8,     9,    10,    12,    13,    14,    15,    16
 };
 #endif
 
@@ -512,8 +499,8 @@ static const yytype_int8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "NUMBER", "'+'", "'-'", "'*'", "'/'",
-  "$accept", "StartSymbol", "S", YY_NULLPTR
+  "$end", "error", "$undefined", "'\\n'", "'A'", "'B'", "$accept",
+  "Lines", "S", "R", YY_NULLPTR
 };
 #endif
 
@@ -522,16 +509,16 @@ static const char *const yytname[] =
    (internal) symbol number NUM (which must be that of a token).  */
 static const yytype_int16 yytoknum[] =
 {
-       0,   256,   257,   258,    43,    45,    42,    47
+       0,   256,   257,    10,    65,    66
 };
 # endif
 
-#define YYPACT_NINF (-5)
+#define YYPACT_NINF (-4)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-1)
+#define YYTABLE_NINF (-8)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -540,8 +527,8 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       5,    -5,     9,    -4,    -5,     5,     5,     5,     5,    -4,
-      -4,    -4,    -4
+       5,     4,     7,    -3,     0,    10,    -4,    -4,    -4,    -4,
+      -4,    11,    -4,    -4
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -549,20 +536,20 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     7,     0,     2,     1,     0,     0,     0,     0,     3,
-       4,     5,     6
+       0,     0,     7,     9,     7,     0,     6,     4,     5,     8,
+       1,     0,     3,     2
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -5,    -5,    -1
+      -4,    -4,    -1,    12
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3
+      -1,     4,     5,     6
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -570,32 +557,34 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       5,     6,     7,     8,     9,    10,    11,    12,     1,     4
+      10,     8,     3,    11,     2,     3,     1,     7,    -7,     2,
+       3,     2,     3,    12,    13,     9
 };
 
 static const yytype_int8 yycheck[] =
 {
-       4,     5,     6,     7,     5,     6,     7,     8,     3,     0
+       0,     2,     5,     4,     4,     5,     1,     3,     3,     4,
+       5,     4,     5,     3,     3,     3
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,     9,    10,     0,     4,     5,     6,     7,    10,
-      10,    10,    10
+       0,     1,     4,     5,     7,     8,     9,     3,     8,     9,
+       0,     8,     3,     3
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,     8,     9,    10,    10,    10,    10,    10
+       0,     6,     7,     7,     7,     8,     8,     8,     9,     9
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     1,     3,     3,     3,     3,     1
+       0,     2,     3,     2,     2,     2,     1,     0,     2,     0
 };
 
 
@@ -1291,48 +1280,20 @@ yyreduce:
   switch (yyn)
     {
   case 2:
-#line 13 "Lab5/q2.y"
-              {
-  
-         printf("\nTotal Operands=%d, Operators=%d\n", operands, operators);
-         return 0;
-  
-        }
-#line 1302 "y.tab.c"
-    break;
-
-  case 3:
-#line 19 "Lab5/q2.y"
-                {operators++;}
-#line 1308 "y.tab.c"
+#line 8 "Lab5/q1.y"
+                       { printf("OK \n"); }
+#line 1286 "y.tab.c"
     break;
 
   case 4:
-#line 20 "Lab5/q2.y"
-                {operators++;}
-#line 1314 "y.tab.c"
-    break;
-
-  case 5:
-#line 21 "Lab5/q2.y"
-                {operators++;}
-#line 1320 "y.tab.c"
-    break;
-
-  case 6:
-#line 22 "Lab5/q2.y"
-                {operators++;}
-#line 1326 "y.tab.c"
-    break;
-
-  case 7:
-#line 23 "Lab5/q2.y"
-                 {operands++;}
-#line 1332 "y.tab.c"
+#line 10 "Lab5/q1.y"
+                     {yyerror("Error: reenter last line:");
+                        yyerrok; }
+#line 1293 "y.tab.c"
     break;
 
 
-#line 1336 "y.tab.c"
+#line 1297 "y.tab.c"
 
       default: break;
     }
@@ -1564,23 +1525,17 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 25 "Lab5/q2.y"
+#line 17 "Lab5/q1.y"
  
  
 
-//driver code
-void main()
-{
-   printf("\nEnter Any Arithmetic Expression which can have operations Addition, Subtraction, Multiplication, Division:\n");
+void yyerror(char * s)
+/* yacc error handler */
+{   
+ fprintf (stderr, "%s\n", s);
+} 
   
-   yyparse();
-   if(flag==0)
-   printf("\nEntered arithmetic expression is Valid\n\n");
-   return 0;
-}
-  
-void yyerror()
+int main(void) 
 {
-   printf("\nEntered arithmetic expression is Invalid\n\n");
-   flag=1;
-}
+ return yyparse();
+}  
