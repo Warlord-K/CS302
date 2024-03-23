@@ -5,8 +5,6 @@
    int flag = 0;
 %} 
 
-%start S
-
 %%
  S     :  '(' S ')' 
        |  '{' S '}'
@@ -19,7 +17,7 @@ int main()
    if(flag==0)   printf("\nParenthesis are balanced\n\n");
    return 0;
 }
-  
+
 void yyerror()
 {
    printf("\nParenthesis are not balanced\n\n");

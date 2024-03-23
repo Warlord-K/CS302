@@ -1,4 +1,4 @@
-LAB=Lab5
+LAB=Lab6
 export LAB
 
 save:
@@ -23,6 +23,20 @@ lx:
 	yacc -d $$LAB/q$$q.y; \
 	cc lex.yy.c y.tab.c -ll -o $$LAB/q$$q; \
 	./$$LAB/q$$q
+
+lxd:
+	@read -p "Question Number: " q; \
+	lex $$LAB/q$$q.l; \
+	yacc -d -t $$LAB/q$$q.y; \
+	cc lex.yy.c y.tab.c -ll -o $$LAB/q$$q; \
+	./$$LAB/q$$q
+
+lxin:
+	@read -p "Question Number: " q; \
+	lex $$LAB/q$$q.l; \
+	yacc -d $$LAB/q$$q.y; \
+	cc lex.yy.c y.tab.c -ll -o $$LAB/q$$q; \
+	./$$LAB/q$$q < input.c
 
 lex:
 	@read -p "Question Number: " q; \
