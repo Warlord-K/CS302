@@ -491,7 +491,7 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    11,    11,    12,    13,    14
+       0,     9,     9,    10,    11,    12
 };
 #endif
 
@@ -1510,7 +1510,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 15 "Lab6/q2.y"
+#line 13 "Lab6/q2.y"
  
 int main()
 {
@@ -1518,7 +1518,7 @@ int main()
    if(flag==0)   printf("\nParenthesis are balanced\n\n");
    return 0;
 }
-  
+
 void yyerror()
 {
    printf("\nParenthesis are not balanced\n\n");
