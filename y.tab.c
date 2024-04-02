@@ -66,14 +66,13 @@
 
 
 /* First part of user prologue.  */
-#line 1 "Lab6/q2.y"
+#line 1 "Lab7/q2.y"
  
    #include <ctype.h> 
    #include <stdio.h> 
    #define YYSTYPE double /* double type for yacc stack */ 
-   int flag = 0;
 
-#line 77 "y.tab.c"
+#line 76 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -116,6 +115,18 @@
 extern int yydebug;
 #endif
 
+/* Token type.  */
+#ifndef YYTOKENTYPE
+# define YYTOKENTYPE
+  enum yytokentype
+  {
+    STRING1 = 258,
+    STRING2 = 259
+  };
+#endif
+/* Tokens.  */
+#define STRING1 258
+#define STRING2 259
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -433,21 +444,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  6
+#define YYFINAL  9
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   17
+#define YYLAST   14
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  7
+#define YYNTOKENS  8
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  2
+#define YYNNTS  3
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  5
+#define YYNRULES  6
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  10
+#define YYNSTATES  15
 
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   257
+#define YYMAXUTOK   259
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -460,18 +471,12 @@ union yyalloc
 static const yytype_int8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       5,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     7,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       3,     4,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     5,     2,     6,     2,     2,     2,     2,
+       2,     2,     2,     2,     6,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -484,14 +489,20 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     1,     2
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+       2,     2,     2,     2,     2,     2,     1,     2,     3,     4
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,     9,     9,    10,    11,    12
+       0,    11,    11,    12,    13,    15,    15
 };
 #endif
 
@@ -500,8 +511,8 @@ static const yytype_int8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "'('", "')'", "'{'", "'}'", "$accept",
-  "S", YY_NULLPTR
+  "$end", "error", "$undefined", "STRING1", "STRING2", "'\\n'", "'@'",
+  "'.'", "$accept", "Lines", "S", YY_NULLPTR
 };
 #endif
 
@@ -510,11 +521,11 @@ static const char *const yytname[] =
    (internal) symbol number NUM (which must be that of a token).  */
 static const yytype_int16 yytoknum[] =
 {
-       0,   256,   257,    40,    41,   123,   125
+       0,   256,   257,   258,   259,    10,    64,    46
 };
 # endif
 
-#define YYPACT_NINF (-1)
+#define YYPACT_NINF (-5)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -528,7 +539,8 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      12,    12,    12,     0,     5,     1,    -1,    12,    -1,    -1
+       4,    -4,     3,     5,     0,    -3,    -5,     7,     9,    -5,
+       1,    -5,    -5,    -5,    -5
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -536,19 +548,20 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       5,     5,     5,     0,     0,     0,     1,     4,     2,     3
+       0,     0,     0,     0,     0,     0,     4,     0,     0,     1,
+       0,     3,     5,     6,     2
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -1,    11
+      -5,    -5,    10
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     7
+      -1,     4,     5
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -556,33 +569,34 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       6,     0,     0,     1,     1,     2,     2,     9,     1,     8,
-       2,     3,     4,     5,     0,     1,     0,     2
+       9,     6,    11,     2,     3,     1,    14,     2,     3,     7,
+      12,     8,    13,     0,    10
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,    -1,    -1,     3,     3,     5,     5,     6,     3,     4,
-       5,     0,     1,     2,    -1,     3,    -1,     5
+       0,     5,     5,     3,     4,     1,     5,     3,     4,     6,
+       3,     6,     3,    -1,     4
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,     5,     8,     8,     8,     0,     8,     4,     6
+       0,     1,     3,     4,     9,    10,     5,     6,     6,     0,
+      10,     5,     3,     3,     5
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,     7,     8,     8,     8,     8
+       0,     8,     9,     9,     9,    10,    10
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     3,     3,     2,     0
+       0,     2,     3,     2,     2,     3,     3
 };
 
 
@@ -1277,8 +1291,27 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
+  case 2:
+#line 11 "Lab7/q2.y"
+                       {printf("Vaild Email\n");}
+#line 1298 "y.tab.c"
+    break;
 
-#line 1282 "y.tab.c"
+  case 3:
+#line 12 "Lab7/q2.y"
+                 {printf("Valid Email\n");}
+#line 1304 "y.tab.c"
+    break;
+
+  case 4:
+#line 13 "Lab7/q2.y"
+                     {yyerror("Invalid Email");
+                        yyerrok;}
+#line 1311 "y.tab.c"
+    break;
+
+
+#line 1315 "y.tab.c"
 
       default: break;
     }
@@ -1510,17 +1543,19 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 13 "Lab6/q2.y"
+#line 20 "Lab7/q2.y"
  
-int main()
-{
-   yyparse();
-   if(flag==0)   printf("\nParenthesis are balanced\n\n");
-   return 0;
-}
+ 
 
-void yyerror()
+void yyerror(char * s)
+/* yacc error handler */
+{   
+ fprintf (stderr, "%s\n", s);
+} 
+  
+int main() 
 {
-   printf("\nParenthesis are not balanced\n\n");
-   flag=1;
-}
+    printf("\nEnter Email\n");
+    yyparse();
+    return 0;
+}  

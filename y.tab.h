@@ -44,6 +44,18 @@
 extern int yydebug;
 #endif
 
+/* Token type.  */
+#ifndef YYTOKENTYPE
+# define YYTOKENTYPE
+  enum yytokentype
+  {
+    STRING1 = 258,
+    STRING2 = 259
+  };
+#endif
+/* Tokens.  */
+#define STRING1 258
+#define STRING2 259
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

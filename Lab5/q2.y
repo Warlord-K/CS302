@@ -22,7 +22,7 @@ StartSymbol: S{
        |  NUMBER {operands++;}
        ;
 %% 
-void main()
+int main()
 {
    printf("\nEnter Any Arithmetic Expression which can have operations Addition, Subtraction, Multiplication, Division:\n");
    yyparse();

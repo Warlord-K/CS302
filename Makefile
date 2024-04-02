@@ -1,4 +1,4 @@
-LAB=Lab6
+LAB=Lab7
 export LAB
 
 save:
