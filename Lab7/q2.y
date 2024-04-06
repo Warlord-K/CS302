@@ -5,15 +5,12 @@
 %} 
 
 %start Lines
-%token STRING1
-%token STRING2
+%token EMAIL
 %%
- Lines :  Lines S '\n' {printf("Vaild Email\n");}
-       |  S '\n' {printf("Valid Email\n");}
+ Lines :  Lines EMAIL '\n' {printf("Vaild Email\n");}
+       |  EMAIL '\n' {printf("Valid Email\n");}
        |  error '\n' {yyerror("Invalid Email");
                         yyerrok;};
- S : STRING1 '@' STRING1 | STRING2 '@' STRING1; 
-
 %% 
  
 
