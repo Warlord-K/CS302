@@ -5,7 +5,6 @@
    int value = 0;
    #define YYSTYPE double /* double type for yacc stack */ 
 %} 
-
 %start Lines
 %token ONE
 %token ZERO
@@ -19,11 +18,7 @@
        | ;
 
 %% 
- 
-
-void yyerror(char * s)
-/* yacc error handler */
-{   
+void yyerror(char * s){   
  fprintf (stderr, "%s\n", s);
 } 
   

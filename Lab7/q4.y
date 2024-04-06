@@ -5,9 +5,7 @@
    int counta = 0;
    int countb = 0;
 %} 
-
 %start Lines
-
 %%
  Lines :  S '\n' {return 0;}
        |  error '\n' {yyerror("Not OK");
@@ -18,16 +16,7 @@
        |  'A' {counta++;};
  B     :  B B
        |  'B' {countb++;};
-
-%% 
- 
-
-void yyerror(char * s)
-/* yacc error handler */
-{   
- fprintf (stderr, "%s\n", s);
-} 
-  
+%%  
 int main() 
 {
     printf("\nEnter Expression\n");
@@ -39,3 +28,9 @@ int main()
     }
     return 0;
 }  
+
+void yyerror(char * s)
+/* yacc error handler */
+{   
+ fprintf (stderr, "%s\n", s);
+} 

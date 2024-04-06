@@ -44,16 +44,6 @@
 extern int yydebug;
 #endif
 
-/* Token type.  */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-  enum yytokentype
-  {
-    EMAIL = 258
-  };
-#endif
-/* Tokens.  */
-#define EMAIL 258
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
